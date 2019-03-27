@@ -133,7 +133,81 @@ table {
 html,
 body {
   height: 100%;
+  font-family: 'Titillium Web', Aerial, sans-serif;
+}
+.container {
+  max-width: 1000px;
+}
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+h1,
+h2,
+h3 {
+  font-family: 'Roboto', Aerial, sans-serif;
+  font-weight: bold;
 }
 p {
-  color: blue;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+ul {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+header {
+  background: #d6d6d6;
+  width: 100%;
+  margin-bottom: 40px;
+}
+header nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  padding: 10px 20px;
+}
+header .header-title {
+  background: #00c271;
+  border: 30px solid #0059ff;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+header .header-title .header-img {
+  max-width: 30%;
+}
+.mid-content {
+  display: flex;
+  justify-content: space-between;
+}
+.mid-content .skills .skill-lists {
+  display: flex;
+  flex: 0 1 500px;
+  justify-content: space-between;
+}
+.mid-content .skills .skill-lists ul {
+  display: flex;
+  flex-direction: column;
+  background: red;
+  max-width: 250px;
+}
+.mid-content .skills .skill-lists ul li {
+  width: auto;
+}
+.mid-content .skills .skill-lists .skill-list-1 {
+  align-items: flex-start;
+}
+.mid-content .skills .skill-lists .skill-list-2 {
+  align-items: flex-end;
+}
+.mid-content .work-history {
+  flex: 0 1 500px;
 }
