@@ -60,9 +60,9 @@ html, body {
 
 // Theme colors, theme fonts
 
-@main-color: rgb(0, 194, 113);
-@secondary-color: rgb(0, 89, 255);
-@terciary-color: rgb(214, 214, 214);
+@main-color: rgb(109, 218, 218);
+@secondary-color: rgb(83, 83, 83);
+@terciary-color: rgb(226, 226, 226);
 
 @title-font: 'Roboto', Aerial, sans-serif;
 @main-font: 'Titillium Web', Aerial, sans-serif;
@@ -71,6 +71,7 @@ html, body {
 
 .container {
 	max-width: 1000px;
+	margin: 0 auto;
 }
 
 h1 {
@@ -96,9 +97,33 @@ p {
 	margin-bottom: 0.5rem;
 }
 
-ul {
-	font-size: 1rem;
-	margin-bottom: 0.5rem;
+a:link {
+color: black;
+text-decoration: none;
+}
+
+a:visited {
+color: black;
+}
+
+a:hover {
+color: black;
+}
+
+a:active {
+color: black;
+} 
+
+.section-end(){
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	border-bottom: 2px solid @terciary-color;
+}
+
+.center-at-700(){
+	@media (max-width: 700px) {
+		text-align: center;
+	}
 }
 
 // Header
@@ -106,18 +131,24 @@ header {
 	
 	background: @terciary-color;
 	width: 100%;
-	margin-bottom: 40px;
+	margin-bottom: 50px;
 
 	nav {
+
 		display: flex;
 		justify-content: space-between;
 		max-width: 500px;
-		padding: 10px 20px
+		padding: 10px 20px;
+		
+		@media (max-width: 500px) {
+			flex-direction: column;
+		}
 	}
 
 	.header-title {
-		background: @main-color;
-		border: 30px solid @secondary-color;
+		background-image: linear-gradient(to bottom right, @main-color, @terciary-color);
+		border-bottom: 5px solid @secondary-color;
+		border-top: 5px solid @secondary-color;
 		padding: 30px;
 		display: flex;
 		justify-content: space-around;
@@ -125,6 +156,11 @@ header {
 
 		.header-img {
 			max-width: 30%;
+			border: 2px solid @secondary-color;
+			border-radius: 20%;
+			@media (max-width: 700px) {
+				display: none;
+			}
 		}
 	}
 }
@@ -132,40 +168,82 @@ header {
 
 // Main
 
+.intro {
+	h3 {
+		text-align: center;
+	}
+	.section-end;
+}
+
 .mid-content {
 	display: flex;
 	justify-content: space-between;
+	.section-end;
 
-	.skills .skill-lists {
-		display: flex;
-		flex: 0 1 500px;
-		justify-content: space-between;
-		
-		ul {
-			display: flex;
-			flex-direction: column;
-			background: red;
-			max-width: 250px;
-
-			li {
-				width: auto;
-			}
-
-		}
-
-		.skill-list-1 {
-			align-items: flex-start;
-		}
-
-		.skill-list-2 {
-			align-items: flex-end;
-		}
-
+	@media (max-width: 700px) {
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.work-history {
-		flex: 0 1 500px;
+		width: 40%;
+
+		h3 {
+			.center-at-700;
+		}
+
+		@media(max-width: 700) {
+			.section-end;
+		}
 	}
+
+	.skills {
+		width: 40%;
+		h3 {
+			.center-at-700;
+		}
+	}
+	
+	.skill-lists {
+		display: flex;
+		justify-content: space-between; 
+		background: @secondary-color;
+		border: 5px solid @secondary-color;
+		border-radius: 5px;
+		
+		li {
+			width: 100%;
+			padding: .25rem;
+			border: 2px solid @secondary-color;
+			border-radius: 5px;
+			background: @terciary-color;
+			font-weight: 500;
+
+			}
+
+		.skill-list-1 {
+			width: 100%;
+			text-align: left;
+		}
+
+		.skill-list-2 {
+			width: 100%;
+			text-align: right;
+		}
+
+	}
+
+}
+
+.contact {
+	.section-end;
 }
 
 // Footer
+
+footer {
+	p {
+		font-size: .75rem;
+		text-align: center;
+	}
+}
