@@ -299,10 +299,16 @@ header .header-title .header-img {
   font-weight: 500;
 }
 .mid-content .skill-lists .skill-list-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   text-align: left;
 }
 .mid-content .skill-lists .skill-list-2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   text-align: right;
 }
