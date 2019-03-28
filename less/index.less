@@ -60,7 +60,7 @@ html, body {
 
 // Theme colors, theme fonts
 
-@main-color: rgb(109, 218, 218);
+@main-color: rgb(148, 255, 255);
 @secondary-color: rgb(83, 83, 83);
 @terciary-color: rgb(226, 226, 226);
 
@@ -69,8 +69,16 @@ html, body {
 
 // Basic Setup, defaults
 
+body {
+	background: @terciary-color;
+	padding: 0px 15px;
+}
+
 .container {
+	background: white;
 	max-width: 1000px;
+	border-left: 2px solid @secondary-color;
+	border-right: 2px solid @secondary-color;
 	margin: 0 auto;
 }
 
@@ -84,7 +92,7 @@ h2 {
 
 h3 {
 	font-size: 1.3rem;
-	margin-bottom: 0.5rem;
+	margin-bottom: 1rem;
 }
 
 h1, h2, h3 {
@@ -104,14 +112,19 @@ text-decoration: none;
 
 a:visited {
 color: black;
+text-decoration: none;
 }
 
 a:hover {
-color: black;
+color: @main-color;
+background-color: @secondary-color; 
+text-decoration: underline;
 }
 
 a:active {
-color: black;
+color: @main-color;
+background-color: @secondary-color;
+text-decoration: underline;
 } 
 
 .section-end(){
@@ -129,19 +142,32 @@ color: black;
 // Header
 header {
 	
-	background: @terciary-color;
+	// background: @terciary-color;
 	width: 100%;
 	margin-bottom: 50px;
 
 	nav {
-
 		display: flex;
 		justify-content: space-between;
 		max-width: 500px;
-		padding: 10px 20px;
-		
+		padding: 5px 10px;
+
+		a {
+			padding: 12px 15px;
+			border-radius: 5px;
+			transition: color .25s, text-decoration .25s, background-color .5s;
+		}
+
 		@media (max-width: 500px) {
 			flex-direction: column;
+			align-items: center;
+
+			a {
+				width: 95%;
+				text-align: center;
+				border: 2px solid @secondary-color;
+				margin: 3px 0px;
+			}
 		}
 	}
 
@@ -172,12 +198,14 @@ header {
 	h3 {
 		text-align: center;
 	}
+	padding: 0px 20px;
 	.section-end;
 }
 
 .mid-content {
 	display: flex;
 	justify-content: space-between;
+	padding: 0px 20px;
 	.section-end;
 
 	@media (max-width: 700px) {
@@ -188,17 +216,24 @@ header {
 	.work-history {
 		width: 40%;
 
+		@media (max-width: 700px) {
+			width: 100%;
+			.section-end;
+		}
+
 		h3 {
 			.center-at-700;
 		}
 
-		@media(max-width: 700) {
-			.section-end;
-		}
 	}
 
 	.skills {
 		width: 40%;
+
+		@media (max-width: 700px) {
+			width: 100%;
+		}
+
 		h3 {
 			.center-at-700;
 		}
@@ -236,7 +271,12 @@ header {
 }
 
 .contact {
+	padding: 0px 20px;
 	.section-end;
+
+	@media(max-width: 700px) {
+		text-align: center;
+	}
 }
 
 // Footer
@@ -245,5 +285,6 @@ footer {
 	p {
 		font-size: .75rem;
 		text-align: center;
+		padding-bottom: 20px;
 	}
 }
